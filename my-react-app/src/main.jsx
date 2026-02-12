@@ -1,17 +1,14 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
+import App from "./App"
 
-const myelement = (
-  <table>
-    <tr>
-      <th>Name</th>
-    </tr>
-    <tr>
-      <td>John</td>
-    </tr>
-  </table>
-);
+const root = createRoot(document.getElementById("root"))
 
-createRoot(document.getElementById('sandy')).render(
-  myelement
+
+root.render(
+  <>
+    <App setup="Yes" name="Hamdike"/>
+    <App setup="yeah" name=""/>
+    <App setup="" name="Ahmet"/>
+  </>
 )

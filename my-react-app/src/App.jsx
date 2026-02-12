@@ -1,7 +1,9 @@
-function App() {
+function App(props) {
   return (
     <div className="App">
-      <h1>Hello World!</h1>
+      {props.setup && <h1>Setup: {props.setup} </h1>}
+      {props.name && <p>Name: {props.name} </p>}
+      <hr />
     </div>
   );
 }
