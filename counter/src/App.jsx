@@ -1,7 +1,7 @@
 import React from "react"
 
-export default function App() {
-    const [count, setCount] = React.useState(0)
+export default function App(props) {
+    const [count, setCount] = React.useState(props.startState)
     
     function add() {
         setCount(prevCount => prevCount + 1)
@@ -10,6 +10,10 @@ export default function App() {
     function subtract() {
         setCount(prevCount => prevCount - 1)
     }    
+
+    function reset() {
+      setCount(0)
+    }
     
     return (
         <main className="container">
@@ -24,6 +28,7 @@ export default function App() {
                   className="plus" 
                   onClick={add} 
                   aria-label="Increase count">+</button>
+                <button className="reset" onClick={reset} >Reset to 0</button>
             </div>
         </main>
     )
