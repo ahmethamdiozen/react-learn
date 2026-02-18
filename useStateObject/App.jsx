@@ -8,7 +8,7 @@ export default function App() {
         lastName: "Doe",
         phone: "+1 (212) 555-1212",
         email: "itsmyrealname@example.com",
-        isFavorite: true
+        isFavorite: false
     })
 
     function toggleFavorite() {
@@ -27,7 +27,7 @@ export default function App() {
                     alt="User profile picture of John Doe"
                 />
                 <div className="info">
-                    <Star isFilled={contact.isFavorite} />
+                    <Star isFilled={contact.isFavorite} handleClick={toggleFavorite}/>
                     <h2 className="name">
                         {contact.firstName} {contact.lastName}
                     </h2>
