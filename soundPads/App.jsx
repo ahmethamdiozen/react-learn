@@ -5,20 +5,14 @@ import Pad from "./Pad"
 export default function App() {
     const [pads, setPads] = React.useState(padsData)
     
-    /**
-     * Challenge: Create a toggle() function that logs
-     * "clicked!" to the console
-     * 
-     * Pass that function down to each of the Pad components
-     * and set it up so when they get clicked, the function runs
-     */
-    
-    function toggle() {
-        console.log("Clicked!")
+    function toggle(id) {
+        setPads(prevPads => prevPads.map(item => {
+            return item.id === id ? {...item, on: !item.on} : item
+        }))
     }
     
     const buttonElements = pads.map(pad => (
-        <Pad toggle={toggle} key={pad.id} color={pad.color} on={pad.on}/>
+        <Pad toggle={toggle} id={pad.id} key={pad.id} color={pad.color} on={pad.on}/>
     ))
     
     return (
