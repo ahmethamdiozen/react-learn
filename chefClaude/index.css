@@ -30,6 +30,10 @@ main {
     padding: 30px 30px 10px;
 }
 
+h3 {
+    text-align: center;
+}
+
 .add-ingredient-form {
     display: flex;
     justify-content: center;
